@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
 
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 const pageTitle = 'About Me';
 
 const identity = {
@@ -10,7 +13,7 @@ const identity = {
   hobbies: ['puzzles', 'reading', 'baseball'],
 };
 
-const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
+const skills = ['HTML', 'CSS', 'JavaScript', 'Astro', 'Writing Docs'];
 const happy = true;
 const finished = false;
 const goal = 3;
@@ -40,9 +43,7 @@ const textCase = 'uppercase';
     </style>
   </head>
   <body>
-    <a href='/'>Home</a>
-    <a href='/about/'>About</a>
-    <a href='/blog/'>Blog</a>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -72,5 +73,7 @@ const textCase = 'uppercase';
     {finished && <p>I finished this tutorial!</p>}
 
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+    <Footer />
   </body>
 </html>
